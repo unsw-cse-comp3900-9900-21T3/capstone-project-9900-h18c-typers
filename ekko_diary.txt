@@ -1,1 +1,1 @@
-111
+Doing some simple UI interface design, and interface interaction logics, some user stories as well.
