@@ -27,6 +27,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
+import sys
+sys.path.insert(0,os.path.join(BASE_DIR,'Dpay/apps'))
+# print(sys.path)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -35,13 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -176,3 +180,6 @@ LOGGING = {
               },
           }
       }
+
+#
+AUTH_USER_MODEL = 'users.User'
