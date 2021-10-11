@@ -9,12 +9,11 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -26,7 +25,6 @@ SECRET_KEY = 'django-insecure-9%p0k!phgn-0rmn$1-+4y)v(&4=o_yr%mo%&xdbx6nb20n!9ds
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -70,17 +68,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'Dpay.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'Dpay',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -100,7 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -114,7 +114,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
@@ -124,3 +123,56 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# redis
+
+CACHES = {"default": {"BACKEND": "django_redis.cache.RedisCache", "LOCATION": "redis://127.0.0.1:6379/1",
+                      "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient", }},
+          "session": {"BACKEND": "django_redis.cache.RedisCache", "LOCATION": "redis://127.0.0.1:6379/0",
+                      "OPTIONS": {"CLIENT_CLASS": "django_redis.client.DefaultClient", }}}
+
+SESSIONENGINE = "django.contrib.sessions.backends.cache"
+SESSIONCACHE_ALIAS = "session"
+
+# log
+
+LOGGING = {
+          'version': 1,
+          'disable_existing_loggers': False,
+          'formatters': {
+              'verbose': {
+                  'format': '%(levelname)s %(asctime)s %(module)s %(lineno)d %(message)s'
+              },
+              'simple': {
+                  'format': '%(levelname)s %(module)s %(lineno)d %(message)s'
+              },
+          },
+          'filters': {
+              'require_debug_true': {
+                  '()': 'django.utils.log.RequireDebugTrue',
+              },
+          },
+          'handlers': {
+              'console': {
+                  'level': 'INFO',
+                  'filters': ['require_debug_true'],
+                  'class': 'logging.StreamHandler',
+                  'formatter': 'simple'
+              },
+              'file': {
+                  'level': 'INFO',
+                  'class': 'logging.handlers.RotatingFileHandler',
+                  'filename': os.path.join(os.path.dirname(BASE_DIR), 'Dpay/logs/Dpay.log'),
+                  'maxBytes': 300 * 1024 * 1024,
+                  'backupCount': 10,
+                  'formatter': 'verbose'
+              },
+          },
+          'loggers': {
+              'django': {
+                  'handlers': ['console', 'file'],
+                  'propagate': True,
+                  'level': 'INFO',
+              },
+          }
+      }
