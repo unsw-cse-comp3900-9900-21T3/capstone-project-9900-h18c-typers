@@ -1,3 +1,5 @@
 /logs/
 /Dpay/.idea
 /db.sqlite3
+.idea
+*/__pycache__/
