@@ -1,0 +1,14 @@
+Work Diary 
+Runsen Zhang
+z5249571
+
+Week1:
+Join a group on Webcms3 and disscuss with group member about Project.
+
+Week2:
+Have some meeting with group members. Talking about some details about Project.
+Choose some tools for developing.
+
+Week3:
+Working on proposal, system architecture part. Start coding.
+
