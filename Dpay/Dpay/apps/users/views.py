@@ -37,7 +37,7 @@ class RegisterView(View):
         if allow != 'on':
             return http.HttpResponseForbidden("协议需要同意")
 
-        user = User.objects.create(username=user_name, password=pwd, mobile=phone)
+        user = User.objects.create_user(username=user_name, password=pwd, mobile=phone)
 
         return JsonResponse({'succ':1},safe=False)
 
