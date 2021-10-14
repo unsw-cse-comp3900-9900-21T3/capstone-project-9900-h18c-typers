@@ -1,0 +1,18 @@
+{\rtf1\ansi\ansicpg936\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 week1\
+After joining the group and getting to know each other with the group members, understand the direction each person is good at. Summarize the course study, and learn to understand the knowledge required to complete the project.\
+\
+Week2\
+We analyzed each topic, discussed the advantages and disadvantages of different project topics, and selected the most suitable project for our group according to each person's ability and experience.\
+\
+Week3\
+We divided the proposal and completed the different parts and projects of the proposal, and discussed the final version.\
+\
+Week4\
+We study the front and back ends and complete part of the code for preliminary demonstration}
