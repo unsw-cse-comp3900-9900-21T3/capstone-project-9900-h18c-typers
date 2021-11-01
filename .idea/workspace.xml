@@ -48,8 +48,12 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="JupyterTrust" id="dc8062b1-6558-4188-bfcd-d98c68e51132" />
   <component name="ProjectId" id="1zRO1Z1NKARv84kGRUHLGboFu8P" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -165,7 +169,7 @@
       <workItem from="1634195750006" duration="109000" />
       <workItem from="1635321176447" duration="474000" />
       <workItem from="1635321654191" duration="21961000" />
-      <workItem from="1635655501391" duration="7999000" />
+      <workItem from="1635655501391" duration="8428000" />
     </task>
     <servers />
   </component>
