@@ -10,3 +10,17 @@ I created Jira's group and invited my group members.
 Week3:
 I connected to the Gibhub classroom.
 On Tuesday, I had a meeting with my team members, determined the division of labor for everyone and assigned the task of the Proposal.
+
+Week4:
+Learned front-end VUE language, began to build the website front-end.
+
+Week5:
+Prepare Demo1 and connect the front-end interface.
+
+Week6:
+I will have a meeting with team members on Wednesday to feedback the problems encountered by Demo1 and discuss the follow-up progress.
+
+Week7:
+Learn the front and back end interface connection and connect the front and back end data.
+
+Week8:
