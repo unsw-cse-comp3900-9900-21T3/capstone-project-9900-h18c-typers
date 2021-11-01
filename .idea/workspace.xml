@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="513908c1-a20e-4e0f-a769-b03f6ab14d4e" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="MySQL - @localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="mysite: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="JupyterTrust" id="dc8062b1-6558-4188-bfcd-d98c68e51132" />
+  <component name="ProjectId" id="1zRO1Z1NKARv84kGRUHLGboFu8P" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/shoppingWeb" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/shoppingWeb" />
+      <recent name="$PROJECT_DIR$/static/image" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Django server.myWeb">
+    <configuration name="views (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="myWeb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/shopping_website" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shopping_website/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="myWeb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/myWeb" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/myWeb/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="myWeb" type="Python.DjangoServer" factoryName="Django server">
+      <module name="myWeb" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="myWeb.settings" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django server.myWeb" />
+      <item itemvalue="Python.views" />
+      <item itemvalue="Python.views (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.views (1)" />
+        <item itemvalue="Python.views" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="513908c1-a20e-4e0f-a769-b03f6ab14d4e" name="Default Changelist" comment="" />
+      <created>1634107219145</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634107219145</updated>
+      <workItem from="1634107223667" duration="6266000" />
+      <workItem from="1634195750006" duration="109000" />
+      <workItem from="1635321176447" duration="474000" />
+      <workItem from="1635321654191" duration="21961000" />
+      <workItem from="1635655501391" duration="7999000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="157" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635655551818">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="157" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1635655551818" />
+    <state x="391" y="133" width="815" height="793" key="#myWeb" timestamp="1634107790537">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="391" y="133" width="815" height="793" key="#myWeb/0.25.1792.1095@0.25.1792.1095" timestamp="1634107790537" />
+    <state x="447" y="299" key="EnvironmentVariablesDialog" timestamp="1634107337251">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="447" y="299" key="EnvironmentVariablesDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1634107337251" />
+    <state x="233" y="312" key="FileChooserDialogImpl" timestamp="1635655633383">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="233" y="312" key="FileChooserDialogImpl/0.25.1792.1095@0.25.1792.1095" timestamp="1635655633383" />
+    <state width="1542" height="252" key="GridCell.Tab.0.bottom" timestamp="1635655498579">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state width="1542" height="252" key="GridCell.Tab.0.bottom/0.25.1792.1095@0.25.1792.1095" timestamp="1635655498579" />
+    <state width="1542" height="252" key="GridCell.Tab.0.center" timestamp="1635655498578">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state width="1542" height="252" key="GridCell.Tab.0.center/0.25.1792.1095@0.25.1792.1095" timestamp="1635655498578" />
+    <state width="1542" height="252" key="GridCell.Tab.0.left" timestamp="1635655498578">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state width="1542" height="252" key="GridCell.Tab.0.left/0.25.1792.1095@0.25.1792.1095" timestamp="1635655498578" />
+    <state width="1542" height="252" key="GridCell.Tab.0.right" timestamp="1635655498578">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state width="1542" height="252" key="GridCell.Tab.0.right/0.25.1792.1095@0.25.1792.1095" timestamp="1635655498578" />
+    <state x="201" y="166" key="SettingsEditor" timestamp="1635655638025">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="201" y="166" key="SettingsEditor/0.25.1792.1095@0.25.1792.1095" timestamp="1635655638025" />
+    <state width="611" height="445" key="SwitcherDM" timestamp="1635748817423">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state width="611" height="445" key="SwitcherDM/0.25.1792.1095@0.25.1792.1095" timestamp="1635748817423" />
+    <state x="921" y="441" width="345" height="226" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1635402097658">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="921" y="441" width="345" height="226" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.25.1792.1095@0.25.1792.1095" timestamp="1635402097658" />
+    <state x="448" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1635321177278">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="448" y="342" key="com.intellij.ide.util.TipDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1635321177278" />
+    <state width="600" height="424" key="javadoc.popup" timestamp="1635749148529">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state width="600" height="424" key="javadoc.popup/0.25.1792.1095@0.25.1792.1095" timestamp="1635749148529" />
+    <state x="549" y="295" width="670" height="676" key="search.everywhere.popup" timestamp="1635326954319">
+      <screen x="0" y="25" width="1792" height="1095" />
+    </state>
+    <state x="549" y="295" width="670" height="676" key="search.everywhere.popup/0.25.1792.1095@0.25.1792.1095" timestamp="1635326954319" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/myWeb$views.coverage" NAME="views Coverage Results" MODIFIED="1635651829856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/myWeb" />
+    <SUITE FILE_PATH="coverage/myWeb$views__1_.coverage" NAME="views (1) Coverage Results" MODIFIED="1635655477849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/shopping_website" />
+  </component>
+</project>
