@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="513908c1-a20e-4e0f-a769-b03f6ab14d4e" name="Default Changelist" comment="" />
+    <list default="true" id="513908c1-a20e-4e0f-a769-b03f6ab14d4e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myWeb/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myWeb/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoppingWeb/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoppingWeb/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoppingWeb/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -169,7 +175,7 @@
       <workItem from="1634195750006" duration="109000" />
       <workItem from="1635321176447" duration="474000" />
       <workItem from="1635321654191" duration="21961000" />
-      <workItem from="1635655501391" duration="8428000" />
+      <workItem from="1635655501391" duration="20587000" />
     </task>
     <servers />
   </component>
@@ -181,10 +187,10 @@
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
     <state x="157" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1635655551818" />
-    <state x="391" y="133" width="815" height="793" key="#myWeb" timestamp="1634107790537">
+    <state x="391" y="133" width="815" height="793" key="#myWeb" timestamp="1635905888166">
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
-    <state x="391" y="133" width="815" height="793" key="#myWeb/0.25.1792.1095@0.25.1792.1095" timestamp="1634107790537" />
+    <state x="391" y="133" width="815" height="793" key="#myWeb/0.25.1792.1095@0.25.1792.1095" timestamp="1635905888166" />
     <state x="447" y="299" key="EnvironmentVariablesDialog" timestamp="1634107337251">
       <screen x="0" y="25" width="1792" height="1095" />
     </state>

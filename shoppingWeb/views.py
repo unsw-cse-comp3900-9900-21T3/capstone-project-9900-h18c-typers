@@ -1,8 +1,12 @@
+from django.db.models import F
 from django.shortcuts import render
 
 # Create your views here.
 from shoppingWeb.models import *
 from django.http import HttpResponse,JsonResponse
+from django.forms.models import model_to_dict
+from django.core import serializers
+import json
 import hashlib
 # Create your views here.
 
@@ -81,12 +85,11 @@ def login_view(request):
         md5.update(password.encode())
         password = md5.hexdigest()
         user = User.objects.filter(username=username,password=password)
-
         if user.exists():
             message = 'success'
             status = 1
-            request.session['username'] = user.username
-            request.session['uid'] = user.id
+            request.session['username'] = user[0].username
+            request.session['uid'] = user[0].username
     response['message'] = message
     response['status'] = status
     return JsonResponse(response)
@@ -97,7 +100,65 @@ def logout_view(request):
     if 'uid' in request.session:
         del request.session['uid']
 
-    response = { }
+    response = {}
     response['message'] = 'success'
     response['status'] = 0
+    return JsonResponse(response)
+
+def userInformation_view(request):
+    status = 0
+    message = "failed"
+    response = {}
+    if request.method == 'GET':
+        username = request.GET.get('username')
+        user = User.objects.filter(username=username)
+        try:
+            res = model_to_dict(user[0])
+            status = 1
+            message = 'success'
+            del res['password']
+            response['data'] = res
+        except Exception as e:
+            message = 'username does not exist'
+
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+def cart_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    if request.method == 'GET':
+        username = request.GET.get('username')
+        # res =  json.loads(serializers.serialize('json',user.cart_set.all()))
+        # response['data'] = res
+        userID = User.objects.filter(username=username)[0].id
+        res = {}
+        count = 0
+        for i in Cart.objects.filter(buyer_id=userID):
+            ID = i.commodity_id_id
+            quantity = i.quantity
+            data = Commodity.objects.filter(id=ID)
+            json_data = json.loads(serializers.serialize('json',data))
+            json_data[0]['fields']['amount'] = quantity
+            res[f'commodity {count}'] = json_data
+            count += 1
+        response['data'] = res
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+
+def commodity_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    if request.method == 'GET':
+        res = Commodity.objects.all()[:15]
+        res = json.loads(serializers.serialize('json',res))
+        status = 1
+        response['data'] = res
+    response['message'] = message
+    response['status'] = status
     return JsonResponse(response)

@@ -39,8 +39,18 @@ class Commodity(models.Model):
     manufacturer = models.CharField('manufacturer',max_length = 20,default='')
     amount = models.IntegerField('amout',default = 0)
     image = models.ImageField(null=True)
-    #category_choices =
-    #category = models
+    category_choices = (
+        (0, 'digital'),
+        (1, 'carton'),
+        (2, 'foods'),
+        (3, 'cosmetics'),
+        (4, 'clothes'),
+        (5, 'pet_supplies'),
+        (6, 'baby_product'),
+        (7, 'other')
+
+    )
+    category = models.SmallIntegerField('category', choices=category_choices, default= 7)
     sales = models.DecimalField('sales',max_digits=12,decimal_places=2,default=0)
 
 class Comment(models.Model):
