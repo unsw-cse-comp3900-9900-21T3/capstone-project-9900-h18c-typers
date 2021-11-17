@@ -1,23 +1,33 @@
+from collections import defaultdict
+
 from django.db.models import F
 from django.shortcuts import render
 
 # Create your views here.
+from django.views import View
+from django_pandas.io import read_frame
+from surprise import Reader, Dataset, SVD, KNNBasic
+
 from shoppingWeb.models import *
-from django.http import HttpResponse,JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.forms.models import model_to_dict
 from django.core import serializers
 from django.core.mail import send_mail
 import json
 import hashlib
+<<<<<<< HEAD
 from decimal import Decimal
+=======
+
+
+>>>>>>> 005dcfc6bc7b5fb147d137aedbf2ceba0d1b6bb1
 # Create your views here.
 
 def check_status(fn):
-
-    def wrapper(request,*args,**kwargs):
+    def wrapper(request, *args, **kwargs):
         if 'username' not in request.session or 'uid' not in request.session:
-            return JsonResponse({'status': '0','message': 'user not login'})
-        return fn(request,*args,**kwargs)
+            return JsonResponse({'status': '0', 'message': 'user not login'})
+        return fn(request, *args, **kwargs)
 
     return wrapper
 
@@ -48,17 +58,17 @@ def register_view(request):
 
             try:
                 user = User.objects.create(username=username,
-                                    password=password,
-                                    birth=birth,
-                                    name = name,
-                                    gender=gender,
-                                    email=email,
-                                    )
+                                           password=password,
+                                           birth=birth,
+                                           name=name,
+                                           gender=gender,
+                                           email=email,
+                                           )
                 # add uid to session
                 request.session['username'] = user.username
                 request.session['uid'] = user.id
                 # set 1 day as expiry time
-                request.session.set_expiry(60*60*12)
+                request.session.set_expiry(60 * 60 * 12)
             except Exception as e:
                 message = 'username exists'
                 status = 0
@@ -68,7 +78,7 @@ def register_view(request):
 
 
 def login_view(request):
-    #only accept post method
+    # only accept post method
     response = {}
     message = 'failed'
     status = 0
@@ -86,7 +96,7 @@ def login_view(request):
         md5 = hashlib.md5()
         md5.update(password.encode())
         password = md5.hexdigest()
-        user = User.objects.filter(username=username,password=password)
+        user = User.objects.filter(username=username, password=password)
         if user.exists():
             message = 'success'
             status = 1
@@ -95,6 +105,7 @@ def login_view(request):
     response['message'] = message
     response['status'] = status
     return JsonResponse(response)
+
 
 def logout_view(request):
     if 'username' in request.session:
@@ -106,6 +117,7 @@ def logout_view(request):
     response['message'] = 'success'
     response['status'] = 0
     return JsonResponse(response)
+
 
 def userInformation_view(request):
     status = 0
@@ -127,6 +139,7 @@ def userInformation_view(request):
     response['status'] = status
     return JsonResponse(response)
 
+
 def cart_view(request):
     status = 0
     message = 'failed'
@@ -142,7 +155,7 @@ def cart_view(request):
             ID = i.commodity_id_id
             quantity = i.quantity
             data = Commodity.objects.filter(id=ID)
-            json_data = json.loads(serializers.serialize('json',data))
+            json_data = json.loads(serializers.serialize('json', data))
             json_data[0]['fields']['amount'] = quantity
             res[f'commodity {count}'] = json_data
             message = 'success'
@@ -159,7 +172,7 @@ def commodity_view(request):
     response = {}
     if request.method == 'GET':
         res = Commodity.objects.all()[:15]
-        res = json.loads(serializers.serialize('json',res))
+        res = json.loads(serializers.serialize('json', res))
         status = 1
         response['data'] = res
         message = 'success'
@@ -219,6 +232,7 @@ def create_group_buying_view(request):
     return JsonResponse(response)
 
 
+<<<<<<< HEAD
 def search_group_buying_view(request):
     status = 0
     message = 'failed'
@@ -477,3 +491,87 @@ def create_order_view(request):
     response['message'] = message
     response['status'] = status
     return JsonResponse(response)
+=======
+class RecommendSystemView(View):
+    def get(self, request):
+        qset = Comment.objects.all()
+        df = read_frame(qset)
+        print(df)
+
+
+        reader = Reader(rating_scale=(1, 5))
+
+        # The columns must correspond to user id, item id and ratings (in that order).
+        surprise_data = Dataset.load_from_df(df[['user_id', 'commodity_ID', 'Rating']], reader)
+
+        all_trainset = surprise_data.build_full_trainset()
+
+        def get_top_n(predictions, n=10):
+            # First map the predictions to each user.
+            top_n = defaultdict(list)
+            for uid, iid, true_r, est, _ in predictions:
+                top_n[uid].append((iid, est))
+            # Then sort the predictions for each user and retrieve the k highest ones.
+            for uid, user_ratings in top_n.items():
+                user_ratings.sort(key=lambda x: x[1], reverse=True)
+                top_n[uid] = user_ratings[:n]
+
+            return top_n
+        algo = KNNBasic(k=40, min_k=3, sim_options={
+            'user_based': False})
+        algo.fit(all_trainset)
+        # Than predict ratings for all pairs (u, i) that are NOT in the training set.
+        testset = all_trainset.build_anti_testset()
+        predictions = algo.test(testset)
+        top_n = get_top_n(predictions, n=6)
+        # print(top_n)
+        for uid, user_ratings in top_n.items():
+            lst = [iid for (iid, _) in user_ratings]
+            # print(lst)
+            user_recommend.objects.update_or_create(user_id=uid,
+                                                    user_recommended=lst)
+
+        item_algo = KNNBasic(k=40, min_k=3, sim_options={
+            'user_based': False})
+        item_algo.fit(all_trainset)
+
+        def getSimilarItems(top_k, item_id):
+            item_inner_id = item_algo.trainset.to_inner_iid(item_id)
+            item_neighbors = item_algo.get_neighbors(item_inner_id, k=top_k)
+            f_item_neighbors = (item_algo.trainset.to_raw_iid(inner_id)
+                                for inner_id in item_neighbors)
+            return f_item_neighbors
+
+        itemset = set(list(df['commodity_ID']))
+        for item in itemset:
+            ilst = list(getSimilarItems(6, item))
+            item_recommend.objects.update_or_create(commodity_ID=item,
+                                                    commodity_recommended=ilst)
+
+        return JsonResponse({"msg:": "Success refresh recommend system!"})
+
+
+class GetUserRecommendView(View):
+    def get(self, request, userid):
+        res = user_recommend.objects.filter(user_id=userid).last()
+        print(res.user_recommended)
+        return JsonResponse({"userid": res.user_id, "userrecommended": res.user_recommended})
+
+
+class GetItemRecommendView(View):
+    def get(self, request, itemid):
+        res = item_recommend.objects.filter(commodity_ID=itemid).last()
+        print(res.commodity_ID)
+        return JsonResponse({"itemid": res.commodity_ID, "itemrecommended": res.commodity_recommended})
+
+
+class QuestionRecommendView(View):
+    def get(self, request, category):
+        result = []
+        for everychar in category:
+            print(everychar)
+            res = Commodity.objects.filter(category=everychar).order_by('sales').last()
+            print(res.name)
+            result.append(res.id)
+        return JsonResponse({"questionrecommend": result})
+>>>>>>> 005dcfc6bc7b5fb147d137aedbf2ceba0d1b6bb1

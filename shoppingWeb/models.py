@@ -74,14 +74,23 @@ class Order_Commodities(models.Model):
 
 
 class Comment(models.Model):
-    content = models.TextField('content',default = '')
+    content = models.TextField('content',default = ' ')
     time = models.DateTimeField('time',auto_now_add=True)
+<<<<<<< HEAD
     commentator = models.ForeignKey(User,on_delete=models.CASCADE,default='1')
     commodity_ID = models.ForeignKey(Commodity,on_delete=models.CASCADE)
    # score = models.DecimalField('discounting_rate',max_digits=15,decimal_places=10,default=1)
     def __str__(self):
 
         return f'{self.commodity_ID}_{self.content}'
+=======
+    # commentator = models.(User)
+    user_id = models.IntegerField('user ID')
+    # user_id = models.ForeignKey(User, on_delete=models.CASCADE,default=0)
+    # commodity_ID = models.ForeignKey(Commodity,on_delete=models.CASCADE)
+    commodity_ID = models.IntegerField('commodity_ID')
+    Rating = models.IntegerField('Rating',default=0)
+>>>>>>> 005dcfc6bc7b5fb147d137aedbf2ceba0d1b6bb1
 
 class Cart(models.Model):
     quantity = models.IntegerField('quantity',default=0)
@@ -103,4 +112,15 @@ class sharing_discounting(models.Model):
     commodity_ID = models.ForeignKey(Commodity,on_delete=models.CASCADE)
     initiator = models.ForeignKey(User,on_delete=models.CASCADE)
     identity_token = models.CharField('token',max_length = 20,default = '')
+
+class user_recommend(models.Model):
+    # user_id  = models.ForeignKey("User",on_delete=models.CASCADE)
+    user_id = models.IntegerField('user ID')
+    user_recommended = models.TextField()
+
+
+class item_recommend(models.Model):
+    # commodity_ID = models.ForeignKey(Commodity,on_delete=models.CASCADE)
+    commodity_ID = models.IntegerField('commodity ID')
+    commodity_recommended = models.TextField()
 

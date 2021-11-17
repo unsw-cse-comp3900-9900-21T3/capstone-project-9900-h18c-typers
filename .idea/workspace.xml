@@ -1,43 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="513908c1-a20e-4e0f-a769-b03f6ab14d4e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/download.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_4a7ZZYf.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_6IBp5XG.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_7FjpVcV.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_7NQLPKN.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_8aCvS5k.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_9sCSPef.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_A8eQulz.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_BGrk0Oj.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_CREEVvd.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_GOefLVH.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_J6hpAVj.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_JB2X2Sn.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_PsCwbuV.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_VCzDEpx.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_XUVMLNt.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_ZHNcLG0.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_ZchrRzq.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_hI7sBnD.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_j9xXGgq.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_oPmd6FE.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_sD7MQNC.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_tqcevD8.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/download_wuwylXG.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shoppingWeb/migrations/0005_auto_20211112_1653.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shoppingWeb/migrations/0006_auto_20211116_1750.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shoppingWeb/migrations/0007_auto_20211116_2231.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shoppingWeb/migrations/0008_auto_20211116_2244.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shoppingWeb/migrations/0009_auto_20211117_1646.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myWeb/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myWeb/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoppingWeb/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoppingWeb/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoppingWeb/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shoppingWeb/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="513908c1-a20e-4e0f-a769-b03f6ab14d4e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -209,7 +173,7 @@
       <workItem from="1635321176447" duration="474000" />
       <workItem from="1635321654191" duration="21961000" />
       <workItem from="1635655501391" duration="24652000" />
-      <workItem from="1636687794040" duration="41515000" />
+      <workItem from="1636687794040" duration="41898000" />
     </task>
     <servers />
   </component>
