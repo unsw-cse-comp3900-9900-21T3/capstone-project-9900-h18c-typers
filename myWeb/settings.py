@@ -25,7 +25,7 @@ SECRET_KEY = 'b^6ynl7$a%s3q2+f9_!%sqev8jcmbqc=i0q$r%iose%-^*+_k^'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,6 +83,7 @@ DATABASES = {
         'NAME': 'mysite',
         'USER': 'root',
         'PASSWORD': '123',
+        #'PASSWORD': 'Popstar101',
         'HOST': '127.0.0.1',
         'PORT': '3306'
     }
@@ -153,3 +154,13 @@ CORS_ALLOW_HEADERS = (
     'x-csrftoken',
     'x-requested-with',
 )
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST = 'smtp.126.com'
+EMAIL_PORT = 25
+
+
+EMAIL_HOST_USER = 'gj_chw@126.com'
+EMAIL_HOST_PASSWORD = 'BKDPLQJYUASSNCGY'

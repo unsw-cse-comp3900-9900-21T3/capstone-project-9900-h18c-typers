@@ -2,8 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="513908c1-a20e-4e0f-a769-b03f6ab14d4e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/download.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_4a7ZZYf.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_6IBp5XG.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_7FjpVcV.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_7NQLPKN.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_8aCvS5k.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_9sCSPef.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_A8eQulz.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_BGrk0Oj.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_CREEVvd.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_GOefLVH.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_J6hpAVj.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_JB2X2Sn.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_PsCwbuV.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_VCzDEpx.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_XUVMLNt.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_ZHNcLG0.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_ZchrRzq.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_hI7sBnD.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_j9xXGgq.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_oPmd6FE.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_sD7MQNC.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_tqcevD8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/download_wuwylXG.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shoppingWeb/migrations/0005_auto_20211112_1653.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shoppingWeb/migrations/0006_auto_20211116_1750.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shoppingWeb/migrations/0007_auto_20211116_2231.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shoppingWeb/migrations/0008_auto_20211116_2244.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shoppingWeb/migrations/0009_auto_20211117_1646.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myWeb/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myWeb/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoppingWeb/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shoppingWeb/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shoppingWeb/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shoppingWeb/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/views.py" afterDir="false" />
@@ -59,13 +89,16 @@
   </component>
   <component name="JupyterTrust" id="dc8062b1-6558-4188-bfcd-d98c68e51132" />
   <component name="ProjectId" id="1zRO1Z1NKARv84kGRUHLGboFu8P" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -175,21 +208,26 @@
       <workItem from="1634195750006" duration="109000" />
       <workItem from="1635321176447" duration="474000" />
       <workItem from="1635321654191" duration="21961000" />
-      <workItem from="1635655501391" duration="20587000" />
+      <workItem from="1635655501391" duration="24652000" />
+      <workItem from="1636687794040" duration="41515000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="157" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1635655551818">
+    <state x="157" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1636687887998">
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
-    <state x="157" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1635655551818" />
-    <state x="391" y="133" width="815" height="793" key="#myWeb" timestamp="1635905888166">
-      <screen x="0" y="25" width="1792" height="1095" />
+    <state x="157" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1636687887998" />
+    <state x="498" y="-951" width="815" height="793" key="#myWeb" timestamp="1637166453469">
+      <screen x="79" y="-1055" width="1920" height="1055" />
     </state>
+    <state x="498" y="-951" key="#myWeb/0.25.1792.1095/79.-1055.1920.1055@79.-1055.1920.1055" timestamp="1637166453469" />
     <state x="391" y="133" width="815" height="793" key="#myWeb/0.25.1792.1095@0.25.1792.1095" timestamp="1635905888166" />
     <state x="447" y="299" key="EnvironmentVariablesDialog" timestamp="1634107337251">
       <screen x="0" y="25" width="1792" height="1095" />
@@ -215,22 +253,23 @@
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
     <state width="1542" height="252" key="GridCell.Tab.0.right/0.25.1792.1095@0.25.1792.1095" timestamp="1635655498578" />
-    <state x="201" y="166" key="SettingsEditor" timestamp="1635655638025">
+    <state x="201" y="166" key="SettingsEditor" timestamp="1636687872823">
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
-    <state x="201" y="166" key="SettingsEditor/0.25.1792.1095@0.25.1792.1095" timestamp="1635655638025" />
-    <state width="611" height="445" key="SwitcherDM" timestamp="1635748817423">
-      <screen x="0" y="25" width="1792" height="1095" />
+    <state x="201" y="166" key="SettingsEditor/0.25.1792.1095@0.25.1792.1095" timestamp="1636687872823" />
+    <state width="655" height="429" key="SwitcherDM" timestamp="1637075008569">
+      <screen x="79" y="-1055" width="1920" height="1055" />
     </state>
+    <state width="655" height="429" key="SwitcherDM/0.25.1792.1095/79.-1055.1920.1055@79.-1055.1920.1055" timestamp="1637075008569" />
     <state width="611" height="445" key="SwitcherDM/0.25.1792.1095@0.25.1792.1095" timestamp="1635748817423" />
     <state x="921" y="441" width="345" height="226" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1635402097658">
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
     <state x="921" y="441" width="345" height="226" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.25.1792.1095@0.25.1792.1095" timestamp="1635402097658" />
-    <state x="448" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1635321177278">
+    <state x="448" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1636687795227">
       <screen x="0" y="25" width="1792" height="1095" />
     </state>
-    <state x="448" y="342" key="com.intellij.ide.util.TipDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1635321177278" />
+    <state x="448" y="342" key="com.intellij.ide.util.TipDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1636687795227" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1635749148529">
       <screen x="0" y="25" width="1792" height="1095" />
     </state>

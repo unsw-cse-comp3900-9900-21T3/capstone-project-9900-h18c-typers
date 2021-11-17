@@ -6,8 +6,10 @@ from shoppingWeb.models import *
 from django.http import HttpResponse,JsonResponse
 from django.forms.models import model_to_dict
 from django.core import serializers
+from django.core.mail import send_mail
 import json
 import hashlib
+from decimal import Decimal
 # Create your views here.
 
 def check_status(fn):
@@ -143,6 +145,7 @@ def cart_view(request):
             json_data = json.loads(serializers.serialize('json',data))
             json_data[0]['fields']['amount'] = quantity
             res[f'commodity {count}'] = json_data
+            message = 'success'
             count += 1
         response['data'] = res
     response['message'] = message
@@ -159,6 +162,318 @@ def commodity_view(request):
         res = json.loads(serializers.serialize('json',res))
         status = 1
         response['data'] = res
+        message = 'success'
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+def group_buying_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    if request.method == 'GET':
+        res = group_buying.objects.all()[:15]
+        res = json.loads(serializers.serialize('json',res))
+        status = 1
+        response['data'] = res
+        message = 'success'
+
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+
+def create_group_buying_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        user = User.objects.filter(username=username)
+        commodityID = request.POST.get('commodityID')
+        commodity = Commodity.objects.filter(id=commodityID)
+        if not user.exists():
+            message = 'username does not exists'
+        elif not commodity:
+            message = 'commodity does not exists'
+        else:
+            status = 1
+            message = 'success'
+            price = commodity[0].price
+            discounting_rate = 1
+            token = request.POST.get('token')
+            try:
+                o = group_buying.objects.create(
+                    price = price,
+                    discounting_rate = discounting_rate,
+                    commodity_ID = commodity[0],
+                    initiator = username,
+                    identity_token = token,
+                )
+                response['id'] = o.id
+            except Exception as e:
+                print(e)
+                message = 'create failed'
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+
+def search_group_buying_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    if request.method == 'GET':
+        #g_id = ID of a group buying
+        g_id = request.GET.get('group_id')
+        try:
+            gb = group_buying.objects.get(id=g_id)
+            data = model_to_dict(gb)
+            response['data'] = data
+            status = 1
+            message = 'success'
+        except Exception as e:
+            print(e)
+            message = 'ID do not match any group buying activate'
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+def delete_group_buying_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    if request.method == 'DELETE':
+        try:
+            g_id = request.GET.get('group_id')
+            gb = group_buying.objects.get(id = g_id)
+            gb.delete()
+            message = 'success'
+            status = 1
+        except Exception as e:
+            message = 'ID do not match any group buying activate '
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+
+def sharing_discounting_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    if request.method == 'GET':
+        # sd_id = request.GET.get('sharing_id')
+        # try:
+        #     sd = group_buying.objects.filter()
+        res = sharing_discounting.objects.all()[:15]
+        res = json.loads(serializers.serialize('json', res))
+        status = 1
+        response['data'] = res
+        message = 'success'
+        
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+
+def create_discounting_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        user = User.objects.filter(username=username)
+        commodityID = request.POST.get('commodityID')
+        commodity = Commodity.objects.filter(id=commodityID)
+        if not user.exists():
+            message = 'username does not exists'
+        elif not commodity:
+            message = 'commodity does not exists'
+        else:
+            status = 1
+            message = 'success'
+            price = commodity[0].price
+            discounting_rate = 1
+            token = request.POST.get('token')
+            helped_list = ''
+            try:
+                o = sharing_discounting.objects.create(
+                    price = price,
+                    discounting_rate = discounting_rate,
+                    commodity_ID = commodity[0],
+                    initiator = user[0],
+                    identity_token = token,
+                    helped_list = helped_list
+                )
+                response['id'] = o.id
+            except Exception as e:
+                print(e)
+                message = 'create failed'
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+
+def search_discounting_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    if request.method == 'GET':
+        # s_id = ID of a sharing and discounting
+        s_id = request.GET.get('discounting_id')
+        try:
+            sd = sharing_discounting.objects.get(id=s_id)
+            data = model_to_dict(sd)
+            response['data'] = data
+            status = 1
+            message = 'success'
+        except Exception as e:
+            print(e)
+            message = 'ID do not match any sharing and discounting activate'
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+def delete_discounting_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    if request.method == 'DELETE':
+        try:
+            s_id = request.GET.get('discounting_id')
+            sd = sharing_discounting.objects.get(id = s_id)
+            sd.delete()
+            message = 'success'
+            status = 1
+        except Exception as e:
+            message = 'ID do not match any sharing and discounting activate '
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+def get_discounting_by_token_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    ds_rate = 0.1
+    if request.method == 'POST':
+        try:
+            username = request.POST.get('username')
+            token = request.POST.get('token')
+            sd = sharing_discounting.objects.get(identity_token=token)
+            helped_list = sd.helped_list
+            initiator = sd.initiator.username
+            if initiator == username:
+                message = 'initiator cannot help himself'
+                raise Exception(message)
+            user = User.objects.filter(username=username)
+            if not user.exists():
+                raise Exception('user is not registered')
+            if helped_list == '':
+                helped_list = username
+                print(helped_list)
+                message = 'success'
+                status = 1
+                sd.discounting_rate = 1 - ds_rate
+                sd.helped_list = helped_list
+                sd.save()
+            else:
+                L = helped_list.split(',')
+                if username in L:
+                    message = 'You have helped'
+                    raise Exception(message)
+                else:
+                    message = 'success'
+                    helped_list = helped_list + ',' + username
+                    f = Decimal(ds_rate/pow(2,len(L)))
+                    sd.discounting_rate = sd.discounting_rate - f
+                    sd.helped_list = helped_list
+                    sd.save()
+        except Exception as e:
+            print(e)
+            message = e.__str__()
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+
+def get_helped_list_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    if request.method == 'GET':
+        token = request.GET.get('token')
+        try:
+            data = {}
+            ds = sharing_discounting.objects.get(identity_token=token)
+            data['list'] = ds.helped_list.split(',')
+            data['discounting_rate'] = ds.discounting_rate
+            response['data'] = data
+            status = 1
+            message = 'success'
+        except Exception as e:
+            message = 'token is incorrect'
+    response['message'] = message
+    response['status'] = status
+    return JsonResponse(response)
+
+def create_order_view(request):
+    status = 0
+    message = 'failed'
+    response = {}
+    if request.method == 'POST':
+        # username = request.POST.get('username')
+        # commodities = request.POST.get('commodityID')
+        # payment_method = request.POST.get('payment_method')
+        # data = request.POST.get('data')
+        #payment_amount = request.POST.get('payment_amount')
+
+        #print(request.body)
+        data = json.loads(request.body)
+        username = data['username']
+        payment_method = data['payment_method']
+        sum = 0
+        try:
+            user = User.objects.get(username=username)
+            order = Order.objects.create(
+                buyer=user,
+                payment_method=payment_method,
+                payment_amount=sum,
+            )
+            message = 'success'
+            status = 1
+        except Exception as e:
+            message = e.__str__()
+        str = ''
+        for _ in data['data']:
+            print(_)
+            print(_['amount'])
+            print(_['introduce'])
+            try:
+                commodity = Commodity.objects.get(name=_['introduce'])
+                amount = _['amount']
+                str += f'  commodity : {commodity.name}, amount:{amount}\n'
+                sum = sum + commodity.price * Decimal(amount)
+                order_Commodities = Order_Commodities.objects.create(amount= amount,
+                                             order = order,
+                                             commodity = commodity)
+            except Exception as e:
+                print(e)
+                message = 'Commodity name is incorrect'
+                status = 1
+        print('---------')
+        order.payment_amount = sum
+        order.save()
+        print('---------')
+        body = f'Dear {username}: \n This is a recipient from Dpay.\nPlease check the below:\n' \
+               f' {str}\n  total price = {sum}\n Best wishes.'
+        send_mail(
+            subject='Thanks for shopping at Dpay',
+            message=body,
+            from_email='gj_chw@126.com',  #
+            recipient_list=['374554025@qq.com'],  #
+            fail_silently=False
+        )
     response['message'] = message
     response['status'] = status
     return JsonResponse(response)

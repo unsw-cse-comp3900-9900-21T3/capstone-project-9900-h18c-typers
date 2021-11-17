@@ -18,6 +18,10 @@ class User(models.Model):
     email = models.EmailField()
     create_time = models.DateField(auto_now_add=True)
 
+    def __str__(self):
+
+        return f'Username: {self.username} ____Email: {self.email}'
+
 class Shopping_address(models.Model):
     phone = models.CharField('phone',max_length=15 , default = '')
     receiver = models.CharField('receiver',max_length = 20,default = '')
@@ -25,20 +29,16 @@ class Shopping_address(models.Model):
     address_detailed = models.CharField('address_detailed',max_length = 20,default = '')
     buyer = models.ForeignKey("User",on_delete=models.CASCADE)
 
-
-class Order(models.Model):
-    payment_amount = models.DecimalField('amount',max_digits=12,decimal_places=2,default = 0)
-    payment_method = models.CharField('payment_method',max_length = 20,default = '')
-    time = models.DateTimeField(auto_now_add=True)
-    buyer = models.ForeignKey(Shopping_address,on_delete=models.CASCADE)
-    commodities = models.ManyToManyField("Commodity")
+    def __str__(self):
+        return f'{self.username}_{self.receiver}_{self.phone}'
 
 
 class Commodity(models.Model):
-    name = models.CharField('name',max_length = 20,default = '')
+    name = models.CharField('name',max_length = 50,default = '')
     manufacturer = models.CharField('manufacturer',max_length = 20,default='')
     amount = models.IntegerField('amout',default = 0)
-    image = models.ImageField(null=True)
+    image = models.ImageField(null=True,)
+    price = models.DecimalField('price',max_digits=12,decimal_places=2,default=88)
     category_choices = (
         (0, 'digital'),
         (1, 'carton'),
@@ -53,11 +53,35 @@ class Commodity(models.Model):
     category = models.SmallIntegerField('category', choices=category_choices, default= 7)
     sales = models.DecimalField('sales',max_digits=12,decimal_places=2,default=0)
 
+    def __str__(self):
+        return f'{self.name}_{self.sales}_{self.manufacturer}'
+
+
+class Order(models.Model):
+    payment_amount = models.DecimalField('amount',max_digits=12,decimal_places=2,default = 0)
+    payment_method = models.CharField('payment_method',max_length = 20,default = '')
+    time = models.DateTimeField(auto_now_add=True)
+    buyer = models.ForeignKey(User,on_delete=models.CASCADE)
+    #commodities = models.ForeignKey(Commodity)
+
+    def __str__(self):
+        return f'{self.buyer.receiver}_{self.time}'
+
+class Order_Commodities(models.Model):
+    order = models.ForeignKey(Order,on_delete=models.CASCADE)
+    amount = models.IntegerField('amount',default='1')
+    commodity = models.ForeignKey(Commodity,on_delete=models.SET_NULL,null=True)
+
+
 class Comment(models.Model):
     content = models.TextField('content',default = '')
     time = models.DateTimeField('time',auto_now_add=True)
-    #commentator = models.(User)
+    commentator = models.ForeignKey(User,on_delete=models.CASCADE,default='1')
     commodity_ID = models.ForeignKey(Commodity,on_delete=models.CASCADE)
+   # score = models.DecimalField('discounting_rate',max_digits=15,decimal_places=10,default=1)
+    def __str__(self):
+
+        return f'{self.commodity_ID}_{self.content}'
 
 class Cart(models.Model):
     quantity = models.IntegerField('quantity',default=0)
@@ -65,14 +89,18 @@ class Cart(models.Model):
     buyer_id = models.ForeignKey(User,on_delete=models.CASCADE)
 
 class group_buying(models.Model):
-    total = models.IntegerField('total_price',default=0)
-    discount = models.FloatField('discount',default=0)
+    price = models.IntegerField('total_price',default=0)
+    discounting_rate = models.DecimalField('discounting_rate',max_digits=15,decimal_places=10,default=1)
     participators = models.ManyToManyField(User)
+    identity_token = models.CharField('address_detailed',max_length = 20,default = '')
     commodity_ID = models.ForeignKey(Commodity,on_delete=models.CASCADE)
+    initiator = models.CharField('username',max_length = 20,default = '')
 
 class sharing_discounting(models.Model):
-    discounting_rate = models.DecimalField('discounting_rate',max_digits=5,decimal_places=2,default=1)
+    price = models.IntegerField('total_price',default=0)
+    discounting_rate = models.DecimalField('discounting_rate',max_digits=15,decimal_places=10,default=1)
     helped_list = models.TextField(blank=True,null=True)
     commodity_ID = models.ForeignKey(Commodity,on_delete=models.CASCADE)
     initiator = models.ForeignKey(User,on_delete=models.CASCADE)
+    identity_token = models.CharField('token',max_length = 20,default = '')
 
