@@ -12,3 +12,20 @@ Choose some tools for developing.
 Week3:
 Working on proposal, system architecture part. Start coding.
 
+Week4:
+Working on register/login/ part, finish some interfaces(Login, register, Check mobile, check username)
+
+Week5:
+Read some matriels about Recommend System, Prepare for Recommend system coding.
+
+Week7:
+Start coding on Recommend system.
+
+Week8:
+Finished Recommend system, start communicate with front-end.
+
+Week 9:
+Write documents about Recommend system.
+
+Week10:
+Prepare for final demo, Do some fix.
