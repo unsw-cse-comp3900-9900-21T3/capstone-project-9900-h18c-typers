@@ -199,12 +199,13 @@ class RecommendSystemView(View):
                 top_n[uid] = user_ratings[:n]
 
             return top_n
-        algo = SVD()
+        algo = KNNBasic(k=40, min_k=3, sim_options={
+            'user_based': False})
         algo.fit(all_trainset)
         # Than predict ratings for all pairs (u, i) that are NOT in the training set.
         testset = all_trainset.build_anti_testset()
         predictions = algo.test(testset)
-        top_n = get_top_n(predictions, n=5)
+        top_n = get_top_n(predictions, n=6)
         # print(top_n)
         for uid, user_ratings in top_n.items():
             lst = [iid for (iid, _) in user_ratings]
@@ -225,8 +226,7 @@ class RecommendSystemView(View):
 
         itemset = set(list(df['commodity_ID']))
         for item in itemset:
-            # print("item",item,"item based recommend product is :", list(getSimilarItems(5, item)))
-            ilst = list(getSimilarItems(5, item))
+            ilst = list(getSimilarItems(6, item))
             item_recommend.objects.update_or_create(commodity_ID=item,
                                                     commodity_recommended=ilst)
 
