@@ -1,0 +1,8 @@
+week2-3: Doing some simple UI interface design, and interface interaction logics, some user stories as well.
+week4: Initialise a Vue project structure and whole front-end project willl be done based on that, and finish login page.
+week5: Do some research about how to use js, and get familar with vue's features.
+week6: Create groupbuy page and discount page.
+week7: Add some apis and make above two functions interact with backend well
+week8: Change some ui design
+week9: Change some functions in those above two pages
+week10: Prepare for final demo
