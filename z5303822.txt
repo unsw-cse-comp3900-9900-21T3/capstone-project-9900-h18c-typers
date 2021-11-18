@@ -1,0 +1,29 @@
+week1
+After joining the group and getting to know each other with the group members, understand the direction each person is good at. Summarize the course study, and learn to understand the knowledge required to complete the project.
+
+Week2
+We analyzed each topic, discussed the advantages and disadvantages of different project topics, and selected the most suitable project for our group according to each person's ability and experience.
+
+Week3
+We divided the proposal and completed the different parts and projects of the proposal, and discussed the final version.
+
+Week4
+We study the front and back ends and complete part of the code for preliminary demonstration.
+
+Week5
+Work on Front-End and Home page design , prepared for DemoA.
+
+Week6
+The meeting summarized the shortcomings of the fifth week of the demonstration and the improvement of the team, and improved the UI.
+
+Week7
+Develop the administrator interface and prepare for the DemoB。
+
+Week8
+Group meeting for connact Front-End and Back-End, test API.
+
+Week9
+Group meeting for the Retrospective B and redesign the UI.
+
+Week10
+Work on final programming , write report and user document.
