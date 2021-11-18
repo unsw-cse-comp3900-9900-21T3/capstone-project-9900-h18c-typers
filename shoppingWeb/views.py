@@ -15,12 +15,7 @@ from django.core import serializers
 from django.core.mail import send_mail
 import json
 import hashlib
-<<<<<<< HEAD
 from decimal import Decimal
-=======
-
-
->>>>>>> 005dcfc6bc7b5fb147d137aedbf2ceba0d1b6bb1
 # Create your views here.
 
 def check_status(fn):
@@ -77,6 +72,7 @@ def register_view(request):
     return JsonResponse(response)
 
 
+@check_status
 def login_view(request):
     # only accept post method
     response = {}
@@ -232,7 +228,6 @@ def create_group_buying_view(request):
     return JsonResponse(response)
 
 
-<<<<<<< HEAD
 def search_group_buying_view(request):
     status = 0
     message = 'failed'
@@ -485,13 +480,13 @@ def create_order_view(request):
             subject='Thanks for shopping at Dpay',
             message=body,
             from_email='gj_chw@126.com',  #
-            recipient_list=['374554025@qq.com'],  #
+            recipient_list=['riley.lxr@gmail.com'],  #
             fail_silently=False
         )
     response['message'] = message
     response['status'] = status
     return JsonResponse(response)
-=======
+
 class RecommendSystemView(View):
     def get(self, request):
         qset = Comment.objects.all()
@@ -574,4 +569,3 @@ class QuestionRecommendView(View):
             print(res.name)
             result.append(res.id)
         return JsonResponse({"questionrecommend": result})
->>>>>>> 005dcfc6bc7b5fb147d137aedbf2ceba0d1b6bb1

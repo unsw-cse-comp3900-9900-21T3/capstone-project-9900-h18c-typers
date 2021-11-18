@@ -9,12 +9,10 @@ urlpatterns = [
     path('commodity',views.commodity_view),
     re_path(r'^get_userInfo', views.userInformation_view),
     re_path(r'^get_cart', views.cart_view),
-<<<<<<< HEAD
     re_path(r'^group_buying', views.group_buying_view),
     path('create_group_buying',views.create_group_buying_view),
     re_path(r'^delete_group_buying',views.delete_group_buying_view),
     re_path(r'^search_group_buying', views.search_group_buying_view),
-
     re_path(r'^discounting',views.sharing_discounting_view),
     re_path(r'^create_discounting',views.create_discounting_view),
     re_path(r'^delete_discounting',views.delete_discounting_view),
@@ -22,11 +20,9 @@ urlpatterns = [
     re_path(r'^get_discounting_by_token',views.get_discounting_by_token_view),
     re_path(r'get_helped_list',views.get_helped_list_view),
     path('create_order',views.create_order_view),
-=======
     path(r'recommend/', views.RecommendSystemView.as_view()),
     path(r'userrecommend/<int:userid>/', views.GetUserRecommendView.as_view()),
     path(r'itemrecommend/<int:itemid>/', views.GetItemRecommendView.as_view()),
     path(r'questionrecommend/<category>/', views.QuestionRecommendView.as_view())
 
->>>>>>> 005dcfc6bc7b5fb147d137aedbf2ceba0d1b6bb1
 ]

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="513908c1-a20e-4e0f-a769-b03f6ab14d4e" name="Default Changelist" comment="" />
+    <list default="true" id="513908c1-a20e-4e0f-a769-b03f6ab14d4e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/shoppingWeb/migrations/0011_auto_20211118_1058.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shoppingWeb/migrations/0012_remove_comment_commentator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myWeb/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myWeb/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoppingWeb/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoppingWeb/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shoppingWeb/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shoppingWeb/views.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -173,7 +181,7 @@
       <workItem from="1635321176447" duration="474000" />
       <workItem from="1635321654191" duration="21961000" />
       <workItem from="1635655501391" duration="24652000" />
-      <workItem from="1636687794040" duration="41898000" />
+      <workItem from="1636687794040" duration="46669000" />
     </task>
     <servers />
   </component>
@@ -184,9 +192,10 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="157" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1636687887998">
-      <screen x="0" y="25" width="1792" height="1095" />
+    <state x="528" y="-891" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1637203785353">
+      <screen x="79" y="-1055" width="1920" height="1055" />
     </state>
+    <state x="528" y="-891" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1095/79.-1055.1920.1055@79.-1055.1920.1055" timestamp="1637203785353" />
     <state x="157" y="189" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1792.1095@0.25.1792.1095" timestamp="1636687887998" />
     <state x="498" y="-951" width="815" height="793" key="#myWeb" timestamp="1637166453469">
       <screen x="79" y="-1055" width="1920" height="1055" />
